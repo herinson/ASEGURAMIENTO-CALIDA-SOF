@@ -1,0 +1,32 @@
+
+from tkinter import *
+  
+#funcion para abrir un archivo
+def abrir_archivo():
+    archivo=open("ruta de archivo","r")
+    archivo.close()
+  
+#funcion para salir
+def salir():
+    ventana.destroy()
+  
+#creacion de la ventana
+ventana = Tk()
+ventana.geometry("400x400")
+ventana.title("Burbuja Explosiva")
+ventana.configure(background="light blue")
+  
+#creacion de etiqueta
+label = Label(ventana, text="Burbuja Explosiva", font=("Verdana", 20))
+label.place(x=100, y=50)
+  
+#boton para abrir archivo
+boton_abrir_archivo = Button(ventana, text="Jugar", command=abrir_archivo)
+boton_abrir_archivo.place(x=150, y=150)
+  
+#boton para salir
+boton_salir = Button(ventana, text="Salir", command=salir)
+boton_salir.place(x=200, y=200)
+  
+#ejecutar la ventana
+ventana.mainloop()
